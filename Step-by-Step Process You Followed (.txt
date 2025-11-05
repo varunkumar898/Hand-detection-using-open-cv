@@ -1,0 +1,82 @@
+Step-by-Step Process You Followed (All in terminal)
+
+Created a new Conda environment
+
+conda create -n handcv python=3.10
+
+
+Created an isolated environment named handcv.
+
+Installed Python 3.10 and all essential dependencies (pip, setuptools, tk, etc.).
+
+This ensures you have a clean Python space just for computer vision projects.
+
+Activated the environment
+conda activate handcv
+
+
+Switched to the new environment.
+
+(At this stage, OpenCV wasn’t installed yet, so importing cv2 failed — that’s normal.)
+
+Created another clean environment
+conda create -n cv python=3.10
+
+
+You removed and recreated another environment named cv, to keep it simpler.
+
+Activated the cv environment
+conda activate cv
+
+
+This made cv your active environment, where all further installations went.
+
+Installed OpenCV
+conda install -c conda-forge opencv
+
+
+Installed OpenCV 4.12.0 along with dependencies:
+
+ffmpeg (for video)
+
+numpy (for array ops)
+
+qt6 (for GUI windows like imshow)
+
+Verified OpenCV works successfully with your Python code.
+
+Tested OpenCV script
+
+python motion_detect.py
+
+
+The motion detection program ran successfully and captured frames from your camera.
+
+The “KeyboardInterrupt” errors appeared only because you manually stopped execution (Ctrl + C), which is normal.
+
+Tried installing Mediapipe
+
+Code :conda install -c conda-forge mediapipe opencv
+
+
+Mediapipe is not available via Conda on Windows — hence the PackagesNotFoundError.
+
+This is expected behavior.
+
+Fix: You must install Mediapipe via pip inside your cv environment.
+
+Next Step (To Add Mediapipe Support)
+
+While in your active environment (cv):
+
+pip install mediapipe
+
+
+If you face a version error, use:
+
+pip install mediapipe --extra-index-url https://pypi.org/simple
+
+
+Then test:
+
+Code: python -c "import mediapipe as mp; print(mp.__version__)"
