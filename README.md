@@ -4,13 +4,6 @@ A lightweight real-time computer vision application that captures webcam video t
 
 ---
 
-## Demo
-
-![Hand Detection Demo](docs/demo.gif)
-
-> **Note:** To display your demo preview, save a screen recording GIF or screenshot named `demo.gif` (or `demo.png`) inside the [`docs/`](docs/) folder.
-
----
 
 ## Features
 
